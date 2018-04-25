@@ -1,3 +1,5 @@
+//import Student from "./student";
+let Student  = require("./student");
 let Person = require("./person");
 let Class = require("./class");
 class Teacher extends Person{
@@ -6,11 +8,11 @@ class Teacher extends Person{
         this.klasses = klasses;
     }
     introduce(){
-        if(this.klasses.length()==0){
+        if(this.klasses==null){
             return super.introduce()+` I am a Teacher. I teach No Class.`;
         }else{
             let res =  super.introduce()+ ` I am a Teacher. I teach Class `;
-            let classNum = klasses.map(x=>x.number);
+            let classNum = this.klasses.map(x=>x.number);
             res+= classNum.join(", ");
             res+='.';
             return res;
